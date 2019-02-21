@@ -71,7 +71,7 @@ module OmniAuth
       end
 
       def callback_url
-        if params[:callback_url].present?
+        if request.params['callback_url']
           request.params['callback_url']
         else
           full_host + script_name + callback_path
